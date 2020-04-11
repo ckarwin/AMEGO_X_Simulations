@@ -21,7 +21,7 @@ More information on MEGAlib can be found [here](http://megalibtoolkit.com/home.h
   cosima -s 432020 GRB170817A.source | tee terminal_output_cosima.txt
   ```
   Note: the part "| tee terminal_output_cosima.txt" just saves the terminal output to a text file for future reference. And the 
-  specification of a seed allows different users to directly compare results. Runs with the same seed should generate identical
+  specification of a seed allows different users to directly compare results. Analysis runs with the same seed should generate identical
   output (is there any statistical variation expected here??).
   
   - The main terminal output from the end of the run is below: <br />
@@ -50,7 +50,7 @@ revan -g AMEGO_Midex/AmegoBase.geo.setup -c revan_AMEGOX_R1_below10MeV.cfg -f GR
 Note: we are using the simulated events from the last step: **GRB170817A.inc1.id1.sim**. 
 And for the reconstruction we use the configuration file: **revan_AMEGOX_R1_below10MeV.cfg**. <br />
 
-- When the GUI comes up do: Reconstruction -> Start event reconstruction
+- When the GUI comes up run: Reconstruction -> Start event reconstruction
 
 - The main terminal output at the end of the run is below:
 ```
@@ -170,7 +170,7 @@ ANALYZED  ......................  1718
 
 ```
 
-- We can plot the energy spectra by selecting: Analysis/Response -> Energy spectra. We'll use 100 bins, an acceptance radius of 15 degrees, and no other cuts. This plot and corresponding output is shown below. 
+- We can plot the energy spectrum by selecting: Analysis/Response -> Energy spectra. We'll use 100 bins, an acceptance radius of 15 degrees, and no other cuts. This plot and corresponding output is shown below. 
 
 ![Alt text](energy_spectra_full.png)
 
