@@ -177,5 +177,6 @@ Number of events:     1118 (inside=1118, outside=0)
 Avg. measured energy: 506.082 keV
 ```
 
--We then select events between 200 - 600 keV, corresponding to the peak emission. This is done in Selections -> Event selections -> Energy. We can then obtain the light curve at Analysis/Response -> Light curve. The plot is shown below. 
+- We then select events between 200 - 600 keV, corresponding to the peak emission. This is done in Selections -> Event selections -> Energy. We can then obtain the light curve at Analysis/Response -> Light curve. The plot is shown below.
+
 ![Alt text](https://github.com/ckarwin/AMEGO_X_Simulations/blob/master/LC_200-600_keV.png)
