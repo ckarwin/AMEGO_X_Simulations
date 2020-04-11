@@ -9,6 +9,8 @@ We use:
 - Geant4 version: 10.02.p03
 - Geometry file: AMEGO_Midex/AmegoBase.geo.setup
 
+For more information on MEGAlib see [here](http://megalibtoolkit.com/home.html).
+
 ## First simulate the events using Cosima: <br />
 
   - Use the source file **GRB170817A.source**. This is the source file for a GRB, with spectrum and light curve 
