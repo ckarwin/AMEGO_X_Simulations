@@ -42,10 +42,12 @@ Visualization Manager deleting...
 
 - First simulate just the source. The executable is below:
 ```
-revan -g AMEGO_Midex/AmegoBase.geo.setup -c revan_AMEGO_X.cfg -f GRB170817A.inc1.id1.sim | tee terminal_output_revan.txt
+revan -g AMEGO_Midex/AmegoBase.geo.setup -c revan_AMEGOX_R1_below10MeV.cfg -f GRB170817A.inc1.id1.sim | tee terminal_output_revan.txt
 ```
 Note: we are using the simulated events from the last step: **GRB170817A.inc1.id1.sim**. 
-And for the reconstruction we use the configuration file: **revan_AMEGO_X.cfg**. <br />
+And for the reconstruction we use the configuration file: **revan_AMEGOX_R1_below10MeV.cfg**. <br />
+
+- When the GUI comes up do: Reconstruction -> Start event reconstruction
 
 - The main terminal output at the end of the run is below:
 ```
@@ -92,7 +94,7 @@ Rejection reasons for not reconstructable events:
 ----------------------------------------------------------------------------
 
 
-Event reconstruction finished in 2.09837 sec.
+Event reconstruction finished in 2.28322 sec.
 ```
 
 - The output file is **GRB170817A.inc1.id1.tra**.  <br />
