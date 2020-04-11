@@ -108,4 +108,63 @@ This is the file that we analyze in the final step below.
 
 ## Lastly perform the image reconstruction with Mimrec: <br />
 
+- We start with running the executable:
+```
+mimrec -g AMEGO_X/Geometry/AMEGO_Midex/AmegoBase.geo.setup -f GRB170817A_w_Background.tra | tee terminal_output_mimrec.txt
+```
+- When the GUI comes up run: Selections -> Show event selections.
 
+- Here is the main terminal output: 
+
+```
+Event selections:
+
+All events  .................... 1718
+Not rejected events  ........... 1118
+
+Rejection reasons:
+
+Not good  ......................  97
+Event Id .......................  0
+Start detector .................  0
+Beam  ..........................  0
+Total energy  ..................  504
+Time  ..........................  0
+Time walk  .....................  0
+Electron energy  ...............  0
+Gamma energy  ..................  0
+Compton angle  .................  0
+First Lever arm  ...............  0
+Any lever arm  .................  0
+Length Compton sequence ........  0
+Clustering quality factor ......  0
+Compton quality factor .........  0
+Track quality factor ...........  0
+Coincidence window .............  0
+Earth-Horizon cut ..............  0
+Pointing .......................  0
+Max. theta deviation ...........  0
+Max. ARM .......................  0
+Max. SPD .......................  0
+Length track ...................  0
+Opening angle pair  ............  0
+Initial energy deposit pair  ...  0
+Pair quality factor ............  0
+Use photos  ....................  0
+Use pairs  .....................  0
+Use Compton  ...................  0
+Use tracked Compton  ...........  0
+Use not tracked Compton  .......  0
+Use muons  .....................  0
+Use PET  .......................  0
+Use multi  .....................  0
+Use unidentifiables  ...........  97
+Use decays  ....................  0
+Use flagged as bad  ............  97
+
+ACCEPTED  ......................  1118
+ANALYZED  ......................  1718
+
+```
+
+- We can plot the energy spectra by selecting: Analysis/Response -> Energy spectra. This plot is shown below. 
