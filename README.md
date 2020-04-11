@@ -3,7 +3,10 @@ The goal is to simulate the GRB source GRB170817A together with the background. 
 is to obtain the light curve of the source. We will first simulate the events using Cosima, then we will simulate
 the event reconstruction using Revan, and finally we will analyze the simulated data using Mimrec.<br />
 
-
+We use: 
+- MEGAlib version: 3.00.00
+- Root version: 6.18.04
+- Geant4 version: 10.02.p03
 
 ## First simulate the events using Cosima: <br />
 
@@ -177,4 +180,4 @@ Avg. measured energy: 506.082 keV
 
 - We then select events between 200 - 600 keV, corresponding to the peak emission. This is done in Selections -> Event selections -> Energy. We can then obtain the light curve at Analysis/Response -> Light curve. The plot is shown below.
 
-![Alt text](https://github.com/ckarwin/AMEGO_X_Simulations/blob/master/LC_200-600_keV.png)
+![Alt text](LC_200-600_keV.png)
