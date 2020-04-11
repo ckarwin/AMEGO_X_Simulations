@@ -169,4 +169,4 @@ ANALYZED  ......................  1718
 
 - We can plot the energy spectra by selecting: Analysis/Response -> Energy spectra. This plot is shown below. 
 
-
+![Alt text](https://github.com/ckarwin/AMEGO_X_Simulations/blob/master/energy_spectra_full.png)
