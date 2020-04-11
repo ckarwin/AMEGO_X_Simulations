@@ -7,12 +7,12 @@ We use:
 - MEGAlib version: 3.00.00
 - Root version: 6.18.04
 - Geant4 version: 10.02.p03
+- Geometry file: AMEGO_Midex/AmegoBase.geo.setup
 
 ## First simulate the events using Cosima: <br />
 
-  - Use the source file **GRB170817A.source**. This is the source file for GRBs, with spectrum and light curve 
-  determined from the files **GRB170817A_main_peak_mid.dat** and **GRB170817A_LC.dat**, respectively. We are using the 
-  geometry file **AMEGO_Midex/AmegoBase.geo.setup**.
+  - Use the source file **GRB170817A.source**. This is the source file for a GRB, with spectrum and light curve 
+  determined from the files **GRB170817A_main_peak_mid.dat** and **GRB170817A_LC.dat**, respectively.
   
   - The execuatable (with the specified seed 432020) is:  <br />
   ```
