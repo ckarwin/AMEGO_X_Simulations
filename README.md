@@ -1,7 +1,7 @@
 # GRB170817A Simulations <br />
 The goal is to simulate the GRB source GRB170817A together with the background. The main objective 
-is to obtain the lightcurve of the source. We will first simulate the events using Cosima, then we will simulate
-the event reconstruction using Revan, and finally we will perform the image reconstruction using Mimrec.<br />
+is to obtain the light curve of the source. We will first simulate the events using Cosima, then we will simulate
+the event reconstruction using Revan, and finally we will analyze the simulated data using Mimrec.<br />
 
 
 
@@ -9,9 +9,7 @@ the event reconstruction using Revan, and finally we will perform the image reco
 
   - Use the source file **GRB170817A.source**. This is the source file for GRBs, with spectrum and light curve 
   determined from the files **GRB170817A_main_peak_mid.dat** and **GRB170817A_LC.dat**, respectively. We are using the 
-  geometry file:
-  
- **AMEGO_Midex/AmegoBase.geo.setup**.
+  geometry file **AMEGO_Midex/AmegoBase.geo.setup**.
   
   - The execuatable (with the specified seed 432020) is:  <br />
   ```
@@ -106,7 +104,7 @@ background sims: **TotalBackground_R1/TotalBackground_R1_minusTrappedLeptonic.ex
 - The combination file is: **GRB170817A_w_Background.tra**. See this file for how the combination is made. 
 This is the file that we analyze in the final step below. 
 
-## Lastly perform the image reconstruction with Mimrec: <br />
+## Lastly analyze the simulated data with Mimrec: <br />
 
 - We start with running the executable:
 ```
