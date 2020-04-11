@@ -9,7 +9,7 @@ We use:
 - Geant4 version: 10.02.p03
 - Geometry file: AMEGO_Midex/AmegoBase.geo.setup
 
-For more information on MEGAlib see [here](http://megalibtoolkit.com/home.html).
+More information on MEGAlib can be found [here](http://megalibtoolkit.com/home.html).
 
 ## First simulate the events using Cosima: <br />
 
