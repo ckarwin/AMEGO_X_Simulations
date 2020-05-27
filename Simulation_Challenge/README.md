@@ -6,7 +6,7 @@ We use:
 - MEGAlib version: 3.00.00
 - Root version: 6.18.04
 - Geant4 version: 10.02.p03
-- Geometry file: AMEGO_Midex/AmegoBase.geo.setup (available in the GRB repository)
+- Geometry file: AMEGO_Midex/AmegoBase.geo.setup (available in the GRB170817A repository)
 
 More information on MEGAlib can be found [here](http://megalibtoolkit.com/home.html).
 
