@@ -41,7 +41,7 @@ Visualization Manager deleting...
 
 ## Next simulate the event reconstruction using Revan: <br />
 
-- First simulate just the source. The executable is below:
+- The executable is below:
 ```
 revan -g AMEGO_Midex/AmegoBase.geo.setup -c revan_AMEGO_X.cfg -f FarFieldPointSource_1MeV.inc1.id1.sim | tee terminal_output_revan.txt
 ```
