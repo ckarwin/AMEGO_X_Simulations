@@ -1,6 +1,5 @@
-# GRB170817A Simulations <br />
-The goal is to simulate the GRB source GRB170817A together with the background. The main objective 
-is to obtain the light curve of the source. We will first simulate the events using Cosima, then we will simulate
+# Simulation Challenge <br />
+The Simulation Challenge will introduce you to MEGAlib and help you work through a manual calculation of the Effective Area of AMEGO-X at 1 MeV. We will first simulate the events using Cosima, then we will simulate
 the event reconstruction using Revan, and finally we will analyze the simulated data using Mimrec.<br />
 
 We use: 
@@ -12,10 +11,13 @@ We use:
 More information on MEGAlib can be found [here](http://megalibtoolkit.com/home.html).
 
 ## First simulate the events using Cosima: <br />
+ 
+  - Use the source file **FarFieldPointSource_1MeV.source**. 
+  It uses the Livermore physics lists which are recommended for lower energy EM processes (Standard is better for high energy events). 
+  It requires 20k triggereed events before stopping (There are various ways to stop the process, such as number of events or time).
+It is a far field point source starting at (0,0) in sphereical coordinates. 
+It is a monoenergetic beam at 1000 keV (particle type 1)
 
-  - Use the source file **GRB170817A.source**. This is the source file for a GRB, with spectrum and light curve 
-  determined from the files **GRB170817A_main_peak_mid.dat** and **GRB170817A_LC.dat**, respectively.
-  
   - The execuatable (with the specified seed 432020) is:  <br />
   ```
   cosima -s 432020 GRB170817A.source | tee terminal_output_cosima.txt
