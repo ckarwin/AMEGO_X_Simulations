@@ -171,10 +171,12 @@ The above output shows that there are 13740 events that have made it through the
 
 To look at the image hit the play button. It should look like a perfect point source at (0,0):
 
+![Alt text](source_image.png)!
+
 To look at the energy spectrum Menu: Analysis/Response -> Energy Spectra
 Here I made no additional selection, and chose 100 bins
 
-![Alt text](energy_spectrum.pdf)
+![Alt text](energy_spectrum.png)
 
 ```
 Energy spectrum - some additional statistics:
@@ -206,6 +208,8 @@ To look at the Menu: Analysis/Response -> ARM of scattered gamma ray
 theta/phi = 0 and the acceptance radius is 15 deg with 100 bins in the histogram
 
 Here are the results:
+
+![Alt text](arm.png)
 
 ```
 Statistics of ARM histogram and fit
@@ -243,5 +247,5 @@ events in histogram = 2188
 generated events = 976447 (this is the last line of the .sim file. TS 952758)
 Area of surrounding sphere = 70685.8 (from the geometry file)
 
-I get Aeff = 2188 / 976447 * 70685.8 = 158.4 cm^2 for the effective area of AMEGO-X at 1 MeV.
+I get A_eff = 2188 / 976447 * 70685.8 = 158.4 cm^2 for the effective area of AMEGO-X at 1 MeV.
 
