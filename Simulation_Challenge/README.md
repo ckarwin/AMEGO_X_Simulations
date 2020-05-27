@@ -169,9 +169,7 @@ ANALYZED  ......................  13740
 
 The above output shows that there are 13740 events that have made it through the revan reconstruction into the .tra file. Only 3236 of these events have made it through our imposed event selections, and you can see that most of them have been rejected due to the Total energy. This is because we have placed a tight constraint on the allowed energy just around the 1 MeV photopeak, as discussed further below.
 
-To look at the image hit the play button. It should look like a perfect point source at (0,0):
-
-![Alt text](source_image.png)!
+To look at the image hit the play button. It should look like a perfect point source at (0,0).
 
 To look at the energy spectrum Menu: Analysis/Response -> Energy Spectra
 Here I made no additional selection, and chose 100 bins
