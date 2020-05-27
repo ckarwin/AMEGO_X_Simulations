@@ -12,36 +12,32 @@ More information on MEGAlib can be found [here](http://megalibtoolkit.com/home.h
 
 ## First simulate the events using Cosima: <br />
  
-  - Use the source file **FarFieldPointSource_1MeV.source**. 
-  It uses the Livermore physics lists which are recommended for lower energy EM processes (Standard is better for high energy events). 
-  It requires 20k triggereed events before stopping (There are various ways to stop the process, such as number of events or time).
-It is a far field point source starting at (0,0) in sphereical coordinates. 
-It is a monoenergetic beam at 1000 keV (particle type 1)
+  - Use the source file **FarFieldPointSource_1MeV.source**. This is a far field point source starting at (0,0) in sphereical coordinates, with a monoenergetic beam at 1000 keV (particle type 1). It uses the Livermore physics lists which are recommended for lower energy EM processes (Standard is better for high energy events). It requires 20k triggereed events before stopping (there are various ways to stop the process, such as number of events or time).
 
   - The execuatable (with the specified seed 432020) is:  <br />
   ```
-  cosima -s 432020 GRB170817A.source | tee terminal_output_cosima.txt
+  cosima -s 432020 FarFieldPointSource_1MeV.source | tee terminal_output_cosima.txt
   ```
   Note: the part "| tee terminal_output_cosima.txt" just saves the terminal output to a text file for future reference. And the 
   specification of a seed allows different users to directly compare results. Analysis runs with the same seed should generate identical
-  output (is there any statistical variation expected here??).
+  output (within statistical uncertainty).
   
   - The main terminal output from the end of the run is below: <br />
 ```
-Summary for run SpaceSim
+Summary for run FFPS
 
-Total number of generated particles:     148796
-  Source GRB:                            148796
+Total number of generated particles:     976447
+  Source Pos:                            976447
 
-Total CPU time spent in run:             8.38628 sec
-Time spent per event:                    5.63609e-05 sec
+Total CPU time spent in run:             80.9221 sec
+Time spent per event:                    8.28741e-05 sec
 
-Observation time:                        3 sec
+Observation time:                        0.0138314 sec
 
 Graphics systems deleted.
 Visualization Manager deleting...
 ```
-- The main output file containing the simulated events is **GRB170817A.inc1.id1.sim**. <br />
+- The main output file containing the simulated events is **FarFieldPointSource_1MeV.inc1.id1.sim**. <br />
 
 ## Next simulate the event reconstruction using Revan: <br />
 
