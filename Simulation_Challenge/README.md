@@ -182,6 +182,7 @@ From here choose Tools -> Fit Panel
 
 Fitting the peak with a simple Gaussian gives:
 
+```
 TFitEditor::DoFit - using function PrevFitTMP  0x3478660
  FCN=84.9269 FROM MIGRAD    STATUS=CONVERGED      62 CALLS          63 TOTAL
                      EDM=3.14769e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
@@ -190,7 +191,8 @@ TFitEditor::DoFit - using function PrevFitTMP  0x3478660
    1  Constant     4.84390e+01   1.37901e+00   4.81516e-03   2.43271e-04
    2  Mean         9.89349e+02   6.36081e-01   2.64350e-03  -3.40107e-04
    3  Sigma        2.58122e+01   5.00658e-01   2.12800e-05  -9.21690e-02
-   
+ ```
+ 
 This means the energy resolution is 25.8 keV (the width of the gaussian fit). Since this is at 1 MeV, there are no pair events here. In the configuration file, we have allowed both tracked and untracked events, so this is a combination of the two.
 
 The config file has already selected an energy window of +/- 3sigma around the peak. When calculating the effecitve area for monoenergetic sources, we always select on the photopeak to only count the events which have been properly reconstructed. +/- 3sigma is standard, but tighter constraints will give a better angular resolution.
@@ -201,6 +203,7 @@ theta/phi = 0 and the acceptance radius is 15 deg with 100 bins in the histogram
 
 Here are the results:
 
+```
 Statistics of ARM histogram and fit
 ***********************************
 
@@ -211,6 +214,7 @@ RMS:                                     4.34008 deg
 
 Total FWHM of fit (not of data!):        4.48191 deg
 Maximum of fit (x position):             0.183115 deg (1-sigma uncertainty: 0.107885 deg ... 0.256923 deg) with maximum 128.897 cts
+```
 
 Here, the FWHM of the ARM distribution represents the angular resolution of the instrument in the Compton regime.
 
@@ -218,16 +222,22 @@ Now we have effectively measured the energy resolution at 1 MeV (25.8 keV) and t
 
 And select 4.48 deg for the Acceptance Radius. Here are the results:
 
+```
 Statistics of ARM histogram and fit
 ***********************************
 
 Analyzed Compton and pair events:        3236
 Compton and pair events in histogram:    2188 (67.6143%)
+```
 
-To calculate the Aeff: [# detected events] / [number of generated events] * [area of surrounding sphere]
-events in histogram = 2188 from above
+To calculate the Aeff:
+```
+[# detected events] / [# of generated events] * [area of surrounding sphere]
+```
+
+events in histogram = 2188 
 generated events = 976447 (this is the last line of the .sim file. TS 952758)
-Area of surrounding sphere = 70685.8 (at the top of the sim file the "SimulationStartAreaFarField" parameter)
+Area of surrounding sphere = 70685.8 (from the geometry file)
 
 I get Aeff = 2188 / 976447 * 70685.8 = 158.4 cm^2 for the effective area of AMEGO-X at 1 MeV.
 
