@@ -172,6 +172,7 @@ The above output shows that there are 13740 events that have made it through the
 To look at the image hit the play button. It should look like a perfect point source at (0,0).
 
 To look at the energy spectrum run: Analysis/Response -> Energy Spectra
+
 Here I made no additional selection, and chose 100 bins
 
 ![Alt text](energy_spectrum.png)
