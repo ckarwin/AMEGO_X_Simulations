@@ -239,7 +239,7 @@ Analyzed Compton and pair events:        3236
 Compton and pair events in histogram:    2188 (67.6143%)
 ```
 
-To calculate the Aeff:
+To calculate the effective area:
 ```
 A_eff = [# detected events] / [# of generated events] * [area of surrounding sphere]
 ```
