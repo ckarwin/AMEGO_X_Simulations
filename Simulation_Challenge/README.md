@@ -1,5 +1,5 @@
 # Simulation Challenge <br />
-The Simulation Challenge will introduce you to MEGAlib and help you work through a manual calculation of the effective area of AMEGO-X at 1 MeV. We will first simulate the events using Cosima, then we will simulate
+The Simulation Challenge will introduce you to MEGAlib and help you work through a manual calculation of the energy resolution, the angular resolution, and the effective area of AMEGO-X at 1 MeV. We will first simulate the events using Cosima, then we will simulate
 the event reconstruction using Revan, and finally we will analyze the simulated data using Mimrec.<br />
 
 We use: 
