@@ -170,7 +170,7 @@ ANALYZED  ......................  1718
 
 ```
 
-- We can plot the energy spectrum by selecting: Analysis/Response -> Energy spectra. We'll use 100 bins, an acceptance radius of 15 degrees, and no other cuts. This plot and corresponding output is shown below. 
+- We can plot the energy spectrum by selecting: Analysis/Response -> Energy spectra. We'll use 100 bins, an energy range of 100-1000 keV and no other cuts. This plot and corresponding output is shown below. 
 
 ![Alt text](energy_spectra_full.png)
 
