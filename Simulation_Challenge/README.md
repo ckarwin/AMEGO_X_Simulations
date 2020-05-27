@@ -202,8 +202,10 @@ This means the energy resolution is 25.8 keV (the width of the gaussian fit). Si
 
 The config file has already selected an energy window of +/- 3sigma around the peak. When calculating the effecitve area for monoenergetic sources, we always select on the photopeak to only count the events which have been properly reconstructed. +/- 3sigma is standard, but tighter constraints will give a better angular resolution.
 
-Now we do the ARM analysis since we are in the Compton regime: 
-To look at the Menu: Analysis/Response -> ARM of scattered gamma ray
+Now we do the ARM analysis since we are in the Compton regime.
+
+run: Analysis/Response -> ARM of scattered gamma ray
+
 theta/phi = 0 and the acceptance radius is 15 deg with 100 bins in the histogram
 
 Here are the results:
