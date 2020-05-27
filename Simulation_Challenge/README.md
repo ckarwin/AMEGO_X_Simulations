@@ -174,9 +174,13 @@ To look at the image hit the play button. It should look like a perfect point so
 To look at the energy spectrum Menu: Analysis/Response -> Energy Spectra
 Here I made no additional selection, and chose 100 bins
 
+![Alt text](energy_spectrum.pdf)
+
+```
 Energy spectrum - some additional statistics:
 Number of events:     3236 (inside=3236, outside=0)
 Avg. measured energy: 989.298 keV
+```
 
 From here choose Tools -> Fit Panel
 
