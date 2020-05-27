@@ -232,7 +232,7 @@ Compton and pair events in histogram:    2188 (67.6143%)
 
 To calculate the Aeff:
 ```
-[# detected events] / [# of generated events] * [area of surrounding sphere]
+A_eff = [# detected events] / [# of generated events] * [area of surrounding sphere]
 ```
 
 events in histogram = 2188 
