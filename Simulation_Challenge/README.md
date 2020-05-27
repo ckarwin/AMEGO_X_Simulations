@@ -245,7 +245,9 @@ A_eff = [# detected events] / [# of generated events] * [area of surrounding sph
 ```
 
 events in histogram = 2188 
+
 generated events = 976447 (this is the last line of the .sim file. TS 952758)
+
 Area of surrounding sphere = 70685.8 (from the geometry file)
 
 I get A_eff = 2188 / 976447 * 70685.8 = 158.4 cm^2 for the effective area of AMEGO-X at 1 MeV.
