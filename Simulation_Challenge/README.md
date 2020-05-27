@@ -43,10 +43,10 @@ Visualization Manager deleting...
 
 - First simulate just the source. The executable is below:
 ```
-revan -g AMEGO_Midex/AmegoBase.geo.setup -c revan_AMEGOX_R1_below10MeV.cfg -f GRB170817A.inc1.id1.sim | tee terminal_output_revan.txt
+revan -g AMEGO_Midex/AmegoBase.geo.setup -c revan_AMEGO_X.cfg -f FarFieldPointSource_1MeV.inc1.id1.sim | tee terminal_output_revan.txt
 ```
-Note: we are using the simulated events from the last step: **GRB170817A.inc1.id1.sim**. 
-And for the reconstruction we use the configuration file: **revan_AMEGOX_R1_below10MeV.cfg**. <br />
+Note: we are using the simulated events from the last step: **FarFieldPointSource_1MeV.inc1.id1.sim**. 
+And for the reconstruction we use the configuration file: **revan_AMEGO_X.cfg**. <br />
 
 - When the GUI comes up run: Reconstruction -> Start event reconstruction
 
@@ -56,56 +56,53 @@ And for the reconstruction we use the configuration file: **revan_AMEGOX_R1_belo
 
 
 Trigger statistics:
-  Not triggered events: ..................................   2796
-  Number of vetoed events: ...............................     11
+  Not triggered events: ..................................   5031
+  Number of vetoed events: ...............................   1229
     Raised vetoes (multiples possible)
-      MainVetoSide: ......................................      5
-      MainVetoTop: .......................................      6
+      MainVetoSide: ......................................    502
+      MainVetoTop: .......................................    754
     Raised triggers canceled by a veto (multiples possible)
-  Number of triggered events: ............................    264
+      MainTriggerCsI: ....................................     48
+      SiOnly: ............................................    390
+      SingleSiCsI: .......................................    247
+  Number of triggered events: ............................  13740
     Raised triggers (multiples possible)
-      MainTriggerCsI: ....................................     10
-      SiOnly: ............................................    136
-      SingleSiCsI: .......................................    138
+      MainTriggerCsI: ....................................   1561
+      SiOnly: ............................................   8959
+      SingleSiCsI: .......................................   6342
 
 
 ----------------------------------------------------------------------------
 
 Event statistics for all triggered (!) events:
-  Number of events .......................................    264 (100.000%)
-  Number of events, which passed event selections ........    167 ( 63.258%)
-  Reconstructable events .................................    264 (100.000%)
+  Number of events .......................................  13740 (100.000%)
+  Number of events, which passed event selections ........   8027 ( 58.421%)
+  Reconstructable events .................................  13740 (100.000%)
        Single-site  ......................................      0 (  0.000%)
-       Compton  ..........................................    167 ( 63.258%)
+       Compton  ..........................................   8010 ( 58.297%)
            Decay  ........................................      0 (  0.000%)
        Pair  .............................................      0 (  0.000%)
-       Muon  .............................................      0 (  0.000%)
+       Muon  .............................................     17 (  0.124%)
        PET . .............................................      0 (  0.000%)
        Multi  ............................................      0 (  0.000%)
 
 Rejection reasons for not reconstructable events:
-  Event consists of nothing but one track ................     47
-  Event consists of nothing but two tracks ...............      2
-  Track is not valid .....................................      4
-  Event starts not in D1 .................................     11
-  Electron direction is not valid ........................      2
-  Comptel type with incompatible kinematics ..............     31
-    Total ................................................     97
+  Too many hits in CSR ...................................      2
+  Event consists of nothing but one track ................   5088
+  Event consists of nothing but two tracks ...............     41
+  Track is not valid .....................................     22
+  Event starts not in D1 .................................    475
+  Electron direction is not valid ........................     57
+  Comptel type with incompatible kinematics ..............     28
+    Total ................................................   5713
 
 ----------------------------------------------------------------------------
 
 
-Event reconstruction finished in 2.28322 sec.
+Event reconstruction finished in 17.9897 sec.
 ```
 
-- The output file is **GRB170817A.inc1.id1.tra**.  <br />
-
-- We want to analze the source plus the background, so we combine the source results with a simulated background (that has already 
-been calculated). We use a 3 second extraction from the 
-background sims: **TotalBackground_R1/TotalBackground_R1_minusTrappedLeptonic.extracted_3s.tra**. <br />
-
-- The combination file is: **GRB170817A_w_Background.tra**. See this file for how the combination is made. 
-This is the file that we analyze in the final step below. 
+- The output file is **FarFieldPointSource_1MeV.inc1.id1.tra**.  <br />
 
 ## Lastly analyze the simulated data with Mimrec: <br />
 
