@@ -108,8 +108,10 @@ Event reconstruction finished in 17.9897 sec.
 
 - We start with running the executable:
 ```
-mimrec -g AMEGO_X/Geometry/AMEGO_Midex/AmegoBase.geo.setup -f GRB170817A_w_Background.tra | tee terminal_output_mimrec.txt
+mimrec -g AMEGO_X/Geometry/AMEGO_Midex/AmegoBase.geo.setup -c mimrec_1MeV_AMEGO_X.cfg -f FarFieldPointSource_1MeV.inc1.id1.tra | tee terminal_output_mimrec.txt
 ```
+- Mimrec is where the event selection happens, and these event selections are included in the configuration file.
+
 - When the GUI comes up run: Selections -> Show event selections.
 
 - Here is the main terminal output: 
@@ -117,23 +119,23 @@ mimrec -g AMEGO_X/Geometry/AMEGO_Midex/AmegoBase.geo.setup -f GRB170817A_w_Backg
 ```
 Event selections:
 
-All events  .................... 1718
-Not rejected events  ........... 1118
+All events  .................... 13740
+Not rejected events  ........... 3236
 
 Rejection reasons:
 
-Not good  ......................  97
+Not good  ......................  5734
 Event Id .......................  0
 Start detector .................  0
 Beam  ..........................  0
-Total energy  ..................  504
+Total energy  ..................  10428
 Time  ..........................  0
 Time walk  .....................  0
 Electron energy  ...............  0
 Gamma energy  ..................  0
 Compton angle  .................  0
-First Lever arm  ...............  0
-Any lever arm  .................  0
+First Lever arm  ...............  3
+Any lever arm  .................  2
 Length Compton sequence ........  0
 Clustering quality factor ......  0
 Compton quality factor .........  0
@@ -153,29 +155,79 @@ Use pairs  .....................  0
 Use Compton  ...................  0
 Use tracked Compton  ...........  0
 Use not tracked Compton  .......  0
-Use muons  .....................  0
+Use muons  .....................  17
 Use PET  .......................  0
 Use multi  .....................  0
-Use unidentifiables  ...........  97
+Use unidentifiables  ...........  5713
 Use decays  ....................  0
-Use flagged as bad  ............  97
+Use flagged as bad  ............  5713
 
-ACCEPTED  ......................  1118
-ANALYZED  ......................  1718
-
-```
-
-- We can plot the energy spectrum by selecting: Analysis/Response -> Energy spectra. We'll use 100 bins, an energy range of 100-1000 keV and no other cuts. This plot and corresponding output is shown below. 
-
-
+ACCEPTED  ......................  3236
+ANALYZED  ......................  13740
 
 ```
+
+The above output shows that there are 13740 events that have made it through the revan reconstruction into the .tra file. Only 3236 of these events have made it through our imposed event selections, and you can see that most of them have been rejected due to the Total energy. This is because we have placed a tight constraint on the allowed energy just around the 1 MeV photopeak, as discussed further below.
+
+To look at the image hit the play button. It should look like a perfect point source at (0,0):
+
+To look at the energy spectrum Menu: Analysis/Response -> Energy Spectra
+Here I made no additional selection, and chose 100 bins
+
 Energy spectrum - some additional statistics:
-Number of events:     1118 (inside=1118, outside=0)
-Avg. measured energy: 506.082 keV
-```
+Number of events:     3236 (inside=3236, outside=0)
+Avg. measured energy: 989.298 keV
 
-- We then select events between 200 - 600 keV, corresponding to the peak emission. This is done in Selections -> Event selections -> Energy. We can then obtain the light curve at Analysis/Response -> Light curve. The plot is shown below.
+From here choose Tools -> Fit Panel
 
+Fitting the peak with a simple Gaussian gives:
 
+TFitEditor::DoFit - using function PrevFitTMP  0x3478660
+ FCN=84.9269 FROM MIGRAD    STATUS=CONVERGED      62 CALLS          63 TOTAL
+                     EDM=3.14769e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     4.84390e+01   1.37901e+00   4.81516e-03   2.43271e-04
+   2  Mean         9.89349e+02   6.36081e-01   2.64350e-03  -3.40107e-04
+   3  Sigma        2.58122e+01   5.00658e-01   2.12800e-05  -9.21690e-02
+   
+This means the energy resolution is 25.8 keV (the width of the gaussian fit). Since this is at 1 MeV, there are no pair events here. In the configuration file, we have allowed both tracked and untracked events, so this is a combination of the two.
+
+The config file has already selected an energy window of +/- 3sigma around the peak. When calculating the effecitve area for monoenergetic sources, we always select on the photopeak to only count the events which have been properly reconstructed. +/- 3sigma is standard, but tighter constraints will give a better angular resolution.
+
+Now we do the ARM analysis since we are in the Compton regime: 
+To look at the Menu: Analysis/Response -> ARM of scattered gamma ray
+theta/phi = 0 and the acceptance radius is 15 deg with 100 bins in the histogram
+
+Here are the results:
+
+Statistics of ARM histogram and fit
+***********************************
+
+Analyzed Compton and pair events:        3236
+Compton and pair events in histogram:    2850 (88.0717%)
+
+RMS:                                     4.34008 deg
+
+Total FWHM of fit (not of data!):        4.48191 deg
+Maximum of fit (x position):             0.183115 deg (1-sigma uncertainty: 0.107885 deg ... 0.256923 deg) with maximum 128.897 cts
+
+Here, the FWHM of the ARM distribution represents the angular resolution of the instrument in the Compton regime.
+
+Now we have effectively measured the energy resolution at 1 MeV (25.8 keV) and the angular resolution (4.48 deg). We can now take these data to calculate the effective area. In addition to a photopeak energy cut, we also make a selection on the ARM, where we only count the events which are reconstructed to be within 1 FWHM of the true source position. I'll go back to the menu: Analysis/Response -> ARM of scattered gamma ray
+
+And select 4.48 deg for the Acceptance Radius. Here are the results:
+
+Statistics of ARM histogram and fit
+***********************************
+
+Analyzed Compton and pair events:        3236
+Compton and pair events in histogram:    2188 (67.6143%)
+
+To calculate the Aeff: [# detected events] / [number of generated events] * [area of surrounding sphere]
+events in histogram = 2188 from above
+generated events = 976447 (this is the last line of the .sim file. TS 952758)
+Area of surrounding sphere = 70685.8 (at the top of the sim file the "SimulationStartAreaFarField" parameter)
+
+I get Aeff = 2188 / 976447 * 70685.8 = 158.4 cm^2 for the effective area of AMEGO-X at 1 MeV.
 
