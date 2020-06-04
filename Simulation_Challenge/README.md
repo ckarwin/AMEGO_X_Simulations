@@ -246,7 +246,7 @@ A_eff = [# detected events] / [# of generated events] * [area of surrounding sph
 
 events in histogram = 2188 
 
-generated events = 976447 (this is the last line of the .sim file. TS 952758)
+generated events = 976447 (this is the last line of the .sim file)
 
 Area of surrounding sphere = 70685.8 (from the geometry file)
 
