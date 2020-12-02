@@ -3,7 +3,17 @@ One of the primary software tools used for designing future MeV Telescopes is ME
 
 This repository contains code for generating the main input for simulating a source in MEGAlib, as well as code for processing the simulated data. 
 
-## Summary of the Module <br />
-The main output is shown below:
+### Module name: 
+       analysis_module
+       
+    
+### Functions: <br/>
+       1) Analysis: superclass 
+       2) Iteration(Analysis) 
+       3) PyLikelihood(Iteration,Analysis) 
+       
+      
+### Purpose:
+      Perform a binned analysis of the Fermi-LAT data.
 
 ![Alt text](SED_7bins.png)
