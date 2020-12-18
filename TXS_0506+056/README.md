@@ -4,4 +4,7 @@ One of the primary software tools used for designing future MeV Telescopes is ME
 ## Purpose <br />
 The primary code in this folder is **MEGAlib_module.py**, which is called with **client_code.py**. The purpose of the module is to generate the inputs for MEGAlib, and process the simulated data. The main output is shown below for the specific case of TXS 0506+056. The black curve is the model spectrum that was simulated. The red data points are the observed (simulated) data. The error bars in the x-direction give the bin size, and the error bars in the y-direction give the 1-sigma statistical error. The module calculates the error, as well as the statistical significance of each bin. For reference, the dashed purple line shows the 3-sigma sensitivity of AMEGO.  
 
+## Background <br />
+The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe).
+
 ![Alt text](SED_7bins.png)
