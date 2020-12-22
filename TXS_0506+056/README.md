@@ -4,7 +4,7 @@
 The python module is meant to be used with the MEGAlib code, available [here](http://megalibtoolkit.com/home.html). Among other things, MEGAlib simulates the emission from any (MeV) gamma-ray source, simulates the instrument response, and generates the simulated data for a given detector design, exposure time, background emission, etc. See the above link for more details regarding the MEGAlib package. Examples for running MEGAlib can be found in this repository in the folders "Simulation_Challenge" and "GRB170817A".  
 
 ## Purpose <br />
-The primary code in this folder is **Run_MEGAlib_module.py** and **Process_MEGAlib_module.py**, which is called with **client_code.py**. The former module is essentially a python wrapper for running MEGAlib. The latter module processes the main MEGAlib input/output. Here, the code is applied to the specific case of TXS 0506+056. 
+The primary code in this folder is **Run_MEGAlib_module.py** and **Process_MEGAlib_module.py**, which is called with **client_code.py**. The former module is essentially a python wrapper for running MEGAlib. The latter module processes the main MEGAlib input/output. The modules can be ran directly from the command line, or submitted to a batch system, which allows it to be easily employed for generating multiple simulations. Here, the code is applied to the specific case of TXS 0506+056. 
 
 ## Background Model <br />
 The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, I am employing R5 as default. 
