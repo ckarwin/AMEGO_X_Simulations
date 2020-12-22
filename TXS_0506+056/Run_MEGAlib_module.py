@@ -2,14 +2,14 @@
 # 
 # Written by Chris karwin; December 2020; Clemson University
 #
-# Purpose: Simulate a source
+# Purpose: Simulate a source SED an light curve.
 # 
 # Index of functions:
 #
 #   Run_MEGAlib(superclass)
-#       -run_cosima()
-#       -run_revan()
-#       -run_mimrec()
+#       -run_cosima(seed="none")
+#       -run_revan(config_file="none")
+#       -run_mimrec(save_dir, numbins, rad, config_file="none")
 #
 ###########################################################
 
