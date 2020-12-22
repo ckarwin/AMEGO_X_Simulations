@@ -58,10 +58,12 @@ Below are the executables for running directly from terminal (mainly for testing
 </pre>
 
 ## Main Outputs <br />
+The simulated SED and light curve are shown below in red. For the SED, upper limits are plotted for bins with signficance < 3-sigma. Note the agreement with the canonical instrumental 3-sigma sensitivity (which has been scaled to the proper exposure time).
+
 <p align="center">
 <img width="700"  src="Images/SED.png">
 </p>
 
 <p align="center">
-<img width="750"  src="Images/TXS_0506_AMEGO-X_LC.png">
+<img width="700"  src="Images/TXS_0506_AMEGO-X_LC.png">
 </p>
