@@ -13,7 +13,11 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
 For any help/problems with running the code please contact me at: ckarwin@clemson.edu. The main modules can easily be further developed for any MEGAlib tasks. I am happy to help with this if there are any specific requests!
 
 ## Basic Overview <br />
-The code can be used for either AMEGO or AMEGO-X. Note that here we are using AMEGO. The difference mainly amonts to the geometery file and the perfomance plots. Below is a schematic showing an overview of the general process:
+The code can be used for either AMEGO or AMEGO-X. Note that here we are using AMEGO. The difference mainly amonts to the geometery file and the perfomance plots. 
+
+**Note: The code has been cross-checked with the canonical telescope performance, and it produces results that are consistent with the sensitivity.** 
+
+Below is a schematic showing an overview of the general process:
 
 <p align="center">
 <img width="900"  src="MEGAlib_sim_overview.png">
