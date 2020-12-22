@@ -20,7 +20,7 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
 Below is a schematic showing an overview of the general process:
 
 <p align="center">
-<img width="900"  src="MEGAlib_sim_overview.png">
+<img width="900"  src="Images/MEGAlib_sim_overview.png">
 </p>
 
 ## Quick Start Guide <br /> 
