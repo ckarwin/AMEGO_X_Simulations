@@ -11,7 +11,7 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
 
 ## Overview <br />
 <p align="center">
-<img width="700"  src="MEGAlib_sim_overview.png">
+<img width="800"  src="MEGAlib_sim_overview.png">
 </p>
 
 ## Quick Start Guide: <br /> 
@@ -49,4 +49,6 @@ Below are the executables for running directly from terminal (mainly for testing
 ```
 
 ## Main Outputs <br />
-![Alt text](SED_7bins.png)
+<p align="center">
+<img width="700"  src="SED_7bins.png">
+</p>
