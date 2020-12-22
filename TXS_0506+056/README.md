@@ -14,7 +14,7 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
 ```
 Below are quick start instructions:
 
-1. Make the main working directory
+1. **Make the main working directory**
   - Needs to contain the following:
     -- client_code.py
     -- Run_MEGAlib_module.py (this can also just be in the the python path instead of the main directory)
