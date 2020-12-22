@@ -5,14 +5,15 @@
 # Purpose: 
 #   1) Make input model file for Cosima.
 #   2) Calculate effective area resulting from MEGAlib simulation.
-#   3) Convert Mimrec output to SED data points; caluclate corresponding error and statistical significance.
+#   3) Convert Mimrec output to SED and light curve; incorporate backgrounds; caluclate corresponding error and statistical significance.
 #
 # Index of functions:
 #
 #   MEGAlib(superclass)
-#       -Make_Cosima_input(input_model)
-#       -Effective_Area(input_model,observed_data,bin_width_file,savefile)
-#       -Make_SED(observed_data,bin_width_file,background_file,savefile)
+#       -Make_Cosima_input(starting_model)
+#       -Effective_Area(wdir)
+#       -Make_SED(wdir,plot_model="default")
+#       -Make_LC(wdir,numbins)
 #
 ##########################################################
 
