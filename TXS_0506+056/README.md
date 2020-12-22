@@ -16,7 +16,7 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
 
 ## Quick Start Guide: <br /> 
 <pre>
-<b 1. Make the main working directory >
+<b> 1. Make the main working directory <br /> 
   - Needs to contain the following
     -- client_code.py
     -- Run_MEGAlib_module.py (this can also just be in the the python path instead of the main directory)
@@ -27,17 +27,17 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
     -- inputs.yaml
     -- AMEGO_Performance directory (for overlaying to plots; can be commented out in Process_MEGAlib_module.py if not wanted)
 
-<b>2. Specify inputs in inputs.yaml
+2. Specify inputs in inputs.yaml
   - The input files need to be in the main working directory, or a subdirectory therein.
   - Note: if input files are in a subdirectory then be sure to specify the relative path (from main directory).
   - The input files need to have the proper forms, as specified in the MEGAlib documentation. See TXS_0506_056 files for example template.
 
-<b>3. To run the code: python client_code.py
+3. To run the code: python client_code.py
   - Uncomment the functions inside the client code that you want to run.
   - The yaml file can be passed from the terminal if needed, otherwise it uses the defualt specified in the client code.
   - The code can be ran directly from the terminal or submitted to a batch system using submit_jobs.py (for example).
 
-<b>4. The client code calls Run_MEGAlib_module.py and Process_MEGAlib_module.py
+4. The client code calls Run_MEGAlib_module.py and Process_MEGAlib_module.py
   - Run the help commands in the client code for a description of the function inputs for each module.
   - The module files shouldn't require too much modification.
 
