@@ -48,9 +48,9 @@ The code can be used for either AMEGO or AMEGO-X. Note that here we are using AM
 
 Below are the executables for running directly from terminal (mainly for testing, saving configuration files, etc):
 
-1. cosima -s seed <name>.source | tee terminal_output_cosima.txt
-2. revan -g <geometry file> -c <configuration file> -f <name>.inc1.id1.sim 
-3. mimrec -g <geometry file> -f <name>.inc1.id1.tra
+1. cosima -s seed name.source | tee terminal_output_cosima.txt
+2. revan -g geometry_file -c configuration_file -f name.inc1.id1.sim 
+3. mimrec -g geometry_file -f name.inc1.id1.tra
 </pre>
 
 ## Main Outputs <br />
