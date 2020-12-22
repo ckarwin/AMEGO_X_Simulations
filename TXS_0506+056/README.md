@@ -63,5 +63,5 @@ Below are the executables for running directly from terminal (mainly for testing
 </p>
 
 <p align="center">
-<img width="700"  src="Images/TXS_0506_AMEGO-X_LC.png">
+<img width="750"  src="Images/TXS_0506_AMEGO-X_LC.png">
 </p>
