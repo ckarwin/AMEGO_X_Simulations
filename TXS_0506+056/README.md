@@ -46,7 +46,7 @@ Below are the executables for running directly from terminal (mainly for testing
 1. cosima -s seed <name>.source | tee terminal_output_cosima.txt
 2. revan -g <geometry file> -c <configuration file> -f <name>.inc1.id1.sim 
 3. mimrec -g <geometry file> -f <name>.inc1.id1.tra
-<pre>
+</pre>
 
 ## Main Outputs <br />
 <p align="center">
