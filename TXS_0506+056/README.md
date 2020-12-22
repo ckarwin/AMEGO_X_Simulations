@@ -41,11 +41,11 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
   - Run the help commands in the client code for a description of the function inputs for each module.
   - The module files shouldn't require too much modification.
 
-Below are the executables for running directly from terminal (mainly for testing or saving configuration files):
+Below are the executables for running directly from terminal (mainly for testing, saving configuration files, etc):
 
-1. cosima -s 432020 TXS_0506_056.source | tee terminal_output_cosima.txt
-2. revan -g /zfs/astrohe/ckarwin/AMEGO_X/Geometry/AMEGO_Probe/AmegoBase.geo.setup -c revan_R1_clustering.cfg -f TXS_0506_056.inc1.id1.sim
-3. mimrec -g /zfs/astrohe/ckarwin/AMEGO_X/Geometry/AMEGO_Probe/AmegoBase.geo.setup -f TXS_0506_056.inc1.id1.tra
+1. cosima -s seed <name>.source | tee terminal_output_cosima.txt
+2. revan -g <geometry file> -c <configuration file> -f <name>.inc1.id1.sim 
+3. mimrec -g <geometry file> -f <name>.inc1.id1.tra
 ```
 
 ## Main Outputs <br />
