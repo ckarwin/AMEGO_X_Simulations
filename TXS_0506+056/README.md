@@ -15,7 +15,7 @@ For any help/problems with running the code please contact me at: ckarwin@clemso
 ## Basic Overview <br />
 The code can be used for either AMEGO or AMEGO-X. Note that here we are using AMEGO. The difference mainly amonts to the geometery file and the perfomance plots. 
 
-**Note: The code has been cross-checked with the canonical telescope performance, and it produces results that are consistent with the sensitivity.** 
+**Important Note: The code has been cross-checked with the canonical telescope performance, and it produces results that are consistent with the sensitivity.** 
 
 Below is a schematic showing an overview of the general process:
 
