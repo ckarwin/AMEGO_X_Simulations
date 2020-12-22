@@ -4,17 +4,17 @@
 The python module is meant to be used with the MEGAlib code, available [here](http://megalibtoolkit.com/home.html). Among other things, MEGAlib simulates the emission from any (MeV) gamma-ray source, simulates the instrument response, and generates the simulated data for a given detector design, exposure time, background emission, etc. See the above link for more details regarding the MEGAlib package. Examples for running MEGAlib can be found in this repository in the folders "Simulation_Challenge" and "GRB170817A".  
 
 ## Purpose <br />
-The primary code in this folder is **Run_MEGAlib_module.py** and **Process_MEGAlib_module.py**, which is called with **client_code.py**. The former module is essentially a python wrapper for running MEGAlib. The latter module processes the main MEGAlib input/output. The modules can be ran directly from the command line, or submitted to a batch system, which allows it to be easily employed for generating multiple simulations. Here, the code is applied to the specific case of TXS 0506+056. 
+The primary code in this folder is **Run_MEGAlib_module.py** and **Process_MEGAlib_module.py**, which is called with **client_code.py**. The Run_MEGAlib_module is essentially a python wrapper for running MEGAlib. The Process_MEGAlib_module processes the main MEGAlib input/output. The modules can be ran directly from the command line, or submitted to a batch system, which allows them to be employed for easilt generating multiple simulations. Here, the code is applied to the specific case of TXS 0506+056. 
 
 ## Background Model <br />
 The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, R5 is being employed as default. 
 
 ## Overview <br />
+The code can be used for either AMEGO or AMEGO-X. Note that here we are using AMEGO. The difference mainly amonts to the geometery file and the perfomance plots. Below is a schematic showing an overview of the general process:
+
 <p align="center">
 <img width="900"  src="MEGAlib_sim_overview.png">
 </p>
-
-## Getting the Code <br />
 
 ## Quick Start Guide: <br /> 
 <pre>
