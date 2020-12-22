@@ -9,10 +9,10 @@ The primary code in this folder is **Run_MEGAlib_module.py** and **Process_MEGAl
 ## Getting Help and Additional Development <br />
 For any help/problems with running the code please contact me at: ckarwin@clemson.edu. The main modules can easily be further developed for any MEGAlib tasks. I am happy to help with this if there are any specific requests!
 
-## Background Model <br />
+## Background Models <br />
 The code can be used for either AMEGO or AMEGO-X. Note that here we are using AMEGO. The difference mainly amonts to the geometery file, the perfomance plots, and the backgrounds.
 
-The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, R5 is being employed as default. 
+The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, R5 is being employed as default. In general the background is calculated over the entire sky. The "Inputs" directory contains the total backgroun extracted within 10 degrees of the source, and is used in the python module. The background was simulated for 2 hours of exposure, so it's scaled to the specified observation time in inputs.yaml. 
 
 ## Basic Overview <br />
 **Important Note: The code has been cross-checked with the canonical telescope performance, and it produces results that are consistent with the sensitivity.** 
