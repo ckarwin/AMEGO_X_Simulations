@@ -10,8 +10,9 @@ The primary code in this folder is **MEGAlib_module.py**, which is called with *
 The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, I am using R5 as default. 
 
 ## Overview <br />
-
-<div style="text-align:center"><img src="MEGAlib_sim_overview.png" width=800></div>
+<p align="center">
+<img width="700"  src="MEGAlib_sim_overview.png">
+</p>
 
 ## Quick Start Guide: <br /> 
 ```
