@@ -1,3 +1,5 @@
+# MEGAPY
+
 ## Software <br />
 One of the primary software tools used for designing future MeV Telescopes is MEGAlib, available [here](http://megalibtoolkit.com/home.html). MEGAlib simulates the emission from any gamma-ray source, simulates the instrument response, and generates the simulated data that would be detected for a given detector design, observation time, background emission, etc. See the above link for more details regarding the MEGAlib package. Examples for running MEGAlib can be found in the folders "Simulation_Challenge" and "GRB170817A".  
 
@@ -7,8 +9,9 @@ The primary code in this folder is **MEGAlib_module.py**, which is called with *
 ## Background <br />
 The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, I am using R5 as default. 
 
-### Test:
+### Test: <br /> 
 
+```
   Below are quick start instructions:
 
   1. Make the main working directory
@@ -41,5 +44,5 @@ Below are the executables for running directly from terminal (mainly for testing
 1. cosima -s 432020 TXS_0506_056.source | tee terminal_output_cosima.txt
 2. revan -g /zfs/astrohe/ckarwin/AMEGO_X/Geometry/AMEGO_Probe/AmegoBase.geo.setup -c revan_R1_clustering.cfg -f TXS_0506_056.inc1.id1.sim
 3. mimrec -g /zfs/astrohe/ckarwin/AMEGO_X/Geometry/AMEGO_Probe/AmegoBase.geo.setup -f TXS_0506_056.inc1.id1.tra
-
+```
 ![Alt text](SED_7bins.png)
