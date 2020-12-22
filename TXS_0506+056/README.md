@@ -23,7 +23,7 @@ Below is a schematic showing an overview of the general process:
 <img width="900"  src="MEGAlib_sim_overview.png">
 </p>
 
-## Quick Start Guide: <br /> 
+## Quick Start Guide <br /> 
 <pre>
 <b> 1. Make the main working directory </b> 
   - Needs to contain the following
