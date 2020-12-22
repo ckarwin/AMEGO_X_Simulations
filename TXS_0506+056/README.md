@@ -11,14 +11,12 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
 
 ## Quick Start Guide: <br /> 
 
-
-Below are quick start instructions:
 ```
 1. Make the main working directory
   - Needs to contain the following
     -- client_code.py
-    -- Run_MEGAlib_module.py (this can also just be in the the python path instead of the main directory)<br />
-    -- Process_MEGAlib_module.py (this can also just be in the the python path instead of the main directory)<br />
+    -- Run_MEGAlib_module.py (this can also just be in the the python path instead of the main directory)
+    -- Process_MEGAlib_module.py (this can also just be in the the python path instead of the main directory)
     -- ExtractSpectrum.cxx
     -- ExtractLightCurve.cxx
     -- submit_jobs.py (for submitting to batch system)
