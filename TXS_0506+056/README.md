@@ -7,7 +7,7 @@ The python module is meant to be used with the MEGAlib code, available [here](ht
 The primary code in this folder is **Run_MEGAlib_module.py** and **Process_MEGAlib_module.py**, which is called with **client_code.py**. The former module is essentially a python wrapper for running MEGAlib. The latter module processes the main MEGAlib input/output. The modules can be ran directly from the command line, or submitted to a batch system, which allows it to be easily employed for generating multiple simulations. Here, the code is applied to the specific case of TXS 0506+056. 
 
 ## Background Model <br />
-The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, I am employing R5 as default. 
+The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, R5 is being employed as default. 
 
 ## Overview <br />
 <p align="center">
