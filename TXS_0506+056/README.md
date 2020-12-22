@@ -58,7 +58,7 @@ Below are the executables for running directly from terminal (mainly for testing
 </pre>
 
 ## Main Outputs <br />
-The simulated SED and light curve are shown below in red. For the SED, upper limits are plotted for bins with signficance < 3-sigma. Note the agreement with the canonical instrumental 3-sigma sensitivity (which has been scaled to the proper exposure time).
+The simulated SED and light curve are shown below in red. For the SED, upper limits are plotted for bins with signficance < 3-sigma. Note the general agreement with the canonical instrumental sensitivity (which has been scaled to the proper exposure time).
 
 <p align="center">
 <img width="700"  src="Images/SED.png">
