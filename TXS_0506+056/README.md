@@ -1,4 +1,4 @@
-# MEGAlib pySim
+# MEGAlib Python Module
 
 ## Software <br />
 One of the primary software tools used for designing future MeV Telescopes is MEGAlib, available [here](http://megalibtoolkit.com/home.html). MEGAlib simulates the emission from any gamma-ray source, simulates the instrument response, and generates the simulated data that would be detected for a given detector design, observation time, background emission, etc. See the above link for more details regarding the MEGAlib package. Examples for running MEGAlib can be found in the folders "Simulation_Challenge" and "GRB170817A".  
@@ -11,7 +11,7 @@ The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-
 
 ## Overview <br />
 <p align="center">
-<img width="800"  src="MEGAlib_sim_overview.png">
+<img width="900"  src="MEGAlib_sim_overview.png">
 </p>
 
 ## Quick Start Guide: <br /> 
