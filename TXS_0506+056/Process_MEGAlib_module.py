@@ -43,6 +43,8 @@ class Process_MEGAlib:
         self.time = inputs["observation_time"]
         self.area =  inputs["area"]
         self.input_model = inputs["spectrum_file"]
+        self.mission = inputs["mission"]
+        self.plots = inputs["plots"]
 
     def Make_Cosima_input(self,starting_model):
 
@@ -188,16 +190,16 @@ class Process_MEGAlib:
         plt.loglog(energy_data,A_eff, color="black",marker="",ls="-",lw=3,label="Effective Area (TXS 0506+056 all events)")
 
         #Plot True (Carolyn's) results for comparison:
-        untracked_compton_silicon = {"file":"AMEGO_effective_area_untracked_compton_silicon.txt","label":"Untracked Compton in silicon","color":"navy","ls":"--"}
-        untracked_compton = {"file":"AMEGO_effective_area_untracked_compton.txt","label":"Untracked Compton","color":"cornflowerblue","ls":"--"}
-        tracked_compton = {"file":"AMEGO_effective_area_tracked_compton.txt","label":"Tracked Compton","color":"green","ls":"-."}
-        pair = {"file":"AMEGO_effective_area_pair.txt","label":"Pair Production","color":"red","ls":":"}
+        untracked_compton_silicon = {"file":"%s_effective_area_untracked_compton_silicon.txt" %self.mission,"label":"Untracked Compton in silicon","color":"navy","ls":"--"}
+        untracked_compton = {"file":"%s_effective_area_untracked_compton.txt" %self.mission,"label":"Untracked Compton","color":"cornflowerblue","ls":"--"}
+        tracked_compton = {"file":"%s_effective_area_tracked_compton.txt" %self.mission,"label":"Tracked Compton","color":"green","ls":"-."}
+        pair = {"file":"%s_effective_area_pair.txt" %self.mission,"label":"Pair Production","color":"red","ls":":"}
 
         plot_list = [untracked_compton,untracked_compton_silicon,tracked_compton,pair]
 
         for each in plot_list:
 
-            this_file = "AMEGO_Performance/" + each["file"] 
+            this_file = "%s_Performance/" %self.mission + each["file"] 
             this_label = each["label"]
             this_color = each["color"]
             this_ls = each["ls"]
@@ -208,7 +210,7 @@ class Process_MEGAlib:
 
             plt.loglog(energy,area, color=this_color,marker="",ls=this_ls,lw=3,label=this_label)
 
-        plt.title("AMEGO",fontsize=16,y=1.04)
+        plt.title("%s" %self.mission,fontsize=16,y=1.04)
         plt.xlabel("Energy [keV]", fontsize=16)
         plt.ylabel(r"Effective Area [$\mathrm{cm^{2}}$]",fontsize=16)
 
@@ -223,7 +225,8 @@ class Process_MEGAlib:
         plt.grid(color="grey",alpha=0.4,ls=":")
         plt.savefig(wdir+"Aeff.pdf")
 
-        plt.show()
+        if self.plots == True:
+            plt.show()
 
         return
 
@@ -253,8 +256,9 @@ class Process_MEGAlib:
         #define energy conversion, ergs to keV:
         erg_keV = 1.60218e-9 
 
-        #load AMEGO sensitivity:
-        df_amego = pd.read_csv("AMEGO_Performance/AMEGO_sensitivity.txt",skiprows=[0],delim_whitespace=True,names=["energy","flux"])
+        #load sensitivity:
+        this_file = self.mission + "_Performance/" + self.mission + "_sensitivity.txt"
+        df_amego = pd.read_csv(this_file,skiprows=[0],delim_whitespace=True,names=["energy","flux"])
         energy_amego = df_amego["energy"]*(1e3) #convert MeV energy to keV
         
         #convert flux to erg, scale by observing time, and convert for pointed observation:
@@ -281,7 +285,7 @@ class Process_MEGAlib:
         plt.loglog(energy,flux,color="black",alpha=0.8,lw=3,label="input model")
 
         #plot AMEGO sensitivity:
-        plt.loglog(energy_amego,flux_amego,color="purple",ls="--",lw=3,label="AMEGO 3$\sigma$ Continuum Sensitivity")
+        plt.loglog(energy_amego,flux_amego,color="purple",ls="--",lw=3,label="%s 3$\sigma$ Continuum Sensitivity" %self.mission)
 
         #####################
         #plot simulated data:
@@ -366,7 +370,7 @@ class Process_MEGAlib:
     
         #plot 
         plt.loglog(amego_data_energy[good_index],amego_data_flux[good_index],zorder=10,color="red",ms=6,marker="o",ls="",lw=6,label="_nolabel_")
-        plt.errorbar(amego_data_energy[good_index],amego_data_flux[good_index],zorder=10,xerr=xerr_good,yerr=amego_error[good_index],ms=6,color="red",marker="o",ls="",lw=2,uplims=False,label="AMEGO-X data (MEGAlib)")
+        plt.errorbar(amego_data_energy[good_index],amego_data_flux[good_index],zorder=10,xerr=xerr_good,yerr=amego_error[good_index],ms=6,color="red",marker="o",ls="",lw=2,uplims=False,label="%s data (MEGAlib)" %self.mission)
         plt.errorbar(amego_data_energy[ul_index],amego_data_flux[ul_index]+amego_error[ul_index],zorder=10,xerr=xerr_ul,yerr=amego_error[ul_index]/2.0,ms=6,color="red",marker="",ls="",lw=2,uplims=True,label="_nolable_")
         plt.title("TXS 0506+056 (IceCube-170922A flaring state)",fontsize=16,y=1.04)
         plt.xlabel("Energy [keV]", fontsize=16)
@@ -382,8 +386,10 @@ class Process_MEGAlib:
         plt.xlim(1e1,1e7)
         plt.grid(color="grey",alpha=0.2,ls="-")
         plt.savefig(wdir+"SED.pdf")
-        plt.show()
-        plt.close()
+        
+        if self.plots == True:
+            plt.show()
+            plt.close()
 
         #write output to file:
         f = open(wdir+"SED_summary.txt","w")
@@ -512,7 +518,9 @@ class Process_MEGAlib:
         plt.xlim(tmin,tmax)
         #plt.ylim(0.015,0.0445)
         plt.savefig("%s/LC.pdf" %wdir)
-        plt.show()
+        
+        if self.plots == True:
+            plt.show()
 
         return
         

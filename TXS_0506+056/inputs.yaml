@@ -4,6 +4,8 @@ name: "TXS_0506_056" #name of run
 geometry_file: "/zfs/astrohe/ckarwin/AMEGO_X/Geometry/AMEGO_Probe/AmegoBase.geo.setup" #full path to geometry file
 observation_time: 10368000.0 #seconds
 area: 70685.83470577 #area of surrounding sphere, units=cm^2
+mission: "AMEGO" #either AMEGO or AMEGO-X
+plots: True #whether or not to display generated plots; make False when using batch system.
 
 #the files below need to be in the main working directory (or a subdirectory therein): 
 source_file: "Inputs/TXS_0506_056.source"

@@ -38,13 +38,14 @@ def main(cmd_line):
     #functions for running MEGAlib:
     #instanceA.run_cosima(432020)
     #instanceA.run_revan("Inputs/revan_R5_firstinteractionD1_MIPS_clustering.cfg")
-    instanceA.run_mimrec("SixBins_2deg",6,2)
+    #instanceA.run_mimrec("SixBins_2deg",6,2)
+    instanceA.energy_dependent_mimrec("100Bins_Energy_Dependent",100)
 
     #functions for processing the MEGAlib output:
     #instanceB.Make_Cosima_input("Inputs/Keivani_leptonic_model.txt")
-    instanceB.Effective_Area("Mimrec/SixBins_2deg/")
-    instanceB.Make_SED("Mimrec/SixBins_2deg/",model_dict)
-    instanceB.Make_LC("Mimrec/SixBins_2deg/",1)
+    #instanceB.Effective_Area("Mimrec/SixBins_Energy_Dependent/")
+    #instanceB.Make_SED("Mimrec/SixBins_Energy_Dependent/",model_dict)
+    #instanceB.Make_LC("Mimrec/SixBins_10deg/",1)
 
 ########################
 if __name__=="__main__":
