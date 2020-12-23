@@ -1,0 +1,26 @@
+# Example run for Cosima
+
+Version         1
+Geometry        /zfs/astrohe/ckarwin/AMEGO_X/Geometry/AMEGO_Probe/AmegoBase.geo.setup
+
+# Physics list
+PhysicsListEM                        Livermore
+PhysicsListEMActivateFluorescence    false
+
+# Output formats
+StoreCalibrated                      true
+StoreSimulationInfo                  true
+StoreSimulationInfoIonization        false
+DiscretizeHits                       true
+
+
+Run SpaceSim
+SpaceSim.FileName         TXS_0506_056
+SpaceSim.Time             10368000.0
+
+SpaceSim.Source TXS
+TXS.ParticleType           1
+TXS.Beam                   FarFieldPointSource 0 0
+TXS.Spectrum               File TXS_0506_056_30_day_spectrum.dat
+TXS.Flux                   2.1358e-5
+TXS.LightCurve             File  True   TXS_simple_LC.dat
