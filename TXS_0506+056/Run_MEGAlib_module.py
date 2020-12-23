@@ -323,7 +323,7 @@ class Run_MEGAlib:
                 real_arm_list = []
                 for each in energy_bin:
             
-                    if each < max(utc_energy):
+                    if each <= max(utc_energy):
                         this_res = utc_func(each)
                         real_arm_list.append(float(this_res))
             
