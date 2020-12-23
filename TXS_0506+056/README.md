@@ -34,7 +34,8 @@ Below is a schematic showing an overview of the general process:
     -- ExtractLightCurve.cxx
     -- submit_jobs.py (for submitting to batch system)
     -- inputs.yaml
-    -- AMEGO_Performance directory (for overlaying to plots; can be commented out in Process_MEGAlib_module.py if not wanted)
+    -- AMEGO_Performance directory (needed for mission="AMEGO")
+    -- AMEGO_X_Performance directory (needed for mission="AMEGO-X")
 
 <b> 2. Specify inputs in inputs.yaml </b>
   - The input files need to be in the main working directory, or a subdirectory therein.
