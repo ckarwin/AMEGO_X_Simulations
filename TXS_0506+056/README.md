@@ -51,7 +51,7 @@ Below is a schematic showing an overview of the general process:
   - Run the help commands in the client code for a description of the function inputs for each module.
   - The module files shouldn't require too much modification.
 
-Below are the executables for running directly from terminal (mainly for testing, saving configuration files, etc):
+Below are the original MEGAlib executables for running directly from terminal (mainly for testing, saving configuration files, etc):
 
 1. cosima -s seed name.source | tee terminal_output_cosima.txt
 2. revan -g geometry_file -c configuration_file -f name.inc1.id1.sim 
