@@ -12,7 +12,7 @@ for i in range(0,1):
     f.write("source MEGAlibX.sh\n\n")
     f.write("#change to working directory and run job\n")
     f.write("cd /zfs/astrohe/ckarwin/AMEGO_X/TXS_0506_056_AMEGO/Second_Flare/Run_2\n")
-    f.write("python Run_MEGAlib.py")
+    f.write("python client_code.py")
     f.close()
 
     os.system("qsub multiple_batch_submission.pbs")
