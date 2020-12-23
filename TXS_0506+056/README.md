@@ -39,7 +39,7 @@ Below is a schematic showing an overview of the general process:
 <b> 2. Specify inputs in inputs.yaml </b>
   - The input files need to be in the main working directory, or a subdirectory therein.
   - Note: if input files are in a subdirectory then be sure to specify the relative path (from main directory).
-  - The input files need to have the proper forms, as specified in the MEGAlib documentation. See TXS_0506_056 files for example template.
+  - The input files need to have the proper forms, as specified in the MEGAlib documentation. See TXS_0506_056 files in "Inputs" directory for example template.
 
 <b> 3. To run the code: python client_code.py </b>
   - Uncomment the functions inside the client code that you want to run.
