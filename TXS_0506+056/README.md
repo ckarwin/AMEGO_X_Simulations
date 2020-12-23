@@ -44,7 +44,7 @@ Below is a schematic showing an overview of the general process:
 
 <b> 3. To run the code: python client_code.py </b>
   - Uncomment the functions inside the client code that you want to run.
-  - The yaml file can be passed from the terminal if needed, otherwise it uses the defualt specified in the client code.
+  - The yaml file can be passed with the terminal command if needed, otherwise it uses the defualt specified in the client code.
   - The code can be ran directly from the terminal or submitted to a batch system using submit_jobs.py (for example).
 
 <b> 4. The client code calls Run_MEGAlib_module.py and Process_MEGAlib_module.py </b>
