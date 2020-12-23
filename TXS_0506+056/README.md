@@ -4,13 +4,13 @@
 The python module is meant to be used with the MEGAlib code, available [here](http://megalibtoolkit.com/home.html). Among other things, MEGAlib simulates the emission from any (MeV) gamma-ray source, simulates the instrument response, and generates the simulated data for a given detector design, exposure time, background emission, etc. See the above link for more details regarding the MEGAlib package. Examples for running MEGAlib can be found in this repository in the folders "Simulation_Challenge" and "GRB170817A".  
 
 ## Purpose <br />
-The primary code in this folder is **Run_MEGAlib_module.py** and **Process_MEGAlib_module.py**, which is called with **client_code.py**. The Run_MEGAlib_module is essentially a python wrapper for running MEGAlib. The Process_MEGAlib_module processes the main MEGAlib input/output. The modules can be ran directly from the command line, or submitted to a batch system, which allows them to be employed for easily generating multiple simulations. Here, the code is applied to the specific case of TXS 0506+056. 
+The primary code in this folder is **Run_MEGAlib_module.py** and **Process_MEGAlib_module.py**, which is called with **client_code.py**. The Run_MEGAlib_module is essentially a python wrapper for running MEGAlib. The Process_MEGAlib_module processes the main MEGAlib input/output. The modules can be ran directly from the command line, or submitted to a batch system, which allows them to be easily employed for generating multiple simulations. Here, the code is applied to the specific case of TXS 0506+056 for AMEGO. 
 
 ## Getting Help and Additional Development <br />
 For any help/problems with running the code please contact me at: ckarwin@clemson.edu. The main modules can easily be further developed for any MEGAlib tasks. I am happy to help with this if there are any specific requests!
 
 ## Background Models <br />
-The code can be used for either AMEGO or AMEGO-X. Note that here we are using AMEGO. The difference mainly amonts to the geometery file, the perfomance plots, and the backgrounds.
+The code can be used for either AMEGO or AMEGO-X (here we are using AMEGO). The difference mainly amonts to the geometery file, the perfomance plots, and the backgrounds.
 
 The AMEGO backgrounds can be found [here](https://github.com/ComPair/Simulation-Data-Files/tree/master/AMEGO_Probe). There are two options, R1 and R5, each organzied with respect to the different components. Currently, R5 is being employed as default. In general the background is calculated over the entire sky. For the main input file the total background can be extracted within ~20 degrees of the source. The background was simulated for 2 hours of exposure, so in the code it's scaled to the observation time that is specified in inputs.yaml. 
 
