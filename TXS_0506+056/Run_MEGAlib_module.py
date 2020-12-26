@@ -38,10 +38,10 @@ class Run_MEGAlib:
 
         self.name = inputs["name"]
         self.geo_file = inputs["geometry_file"]
-        self.spectrum_file = self.home + "/" + inputs["spectrum_file"]
-        self.lc_file = self.home + "/" + inputs["lightcurve_file"]
-        self.source_file = self.home + "/" + inputs["source_file"]
-        self.bg_tra_file = self.home + "/" + inputs["background_tra_file"]
+        self.spectrum_file = inputs["spectrum_file"]
+        self.lc_file = inputs["lightcurve_file"]
+        self.source_file = inputs["source_file"]
+        self.bg_tra_file = inputs["background_tra_file"]
         self.mission = inputs["mission"]
 
     def run_cosima(self,seed="none"):
@@ -65,7 +65,11 @@ class Run_MEGAlib:
             shutil.rmtree("Cosima")
         os.system("mkdir Cosima")
         os.chdir("Cosima")
-    
+   
+        shutil.copy2(self.home + "/Inputs/" + self.source_file,self.source_file)
+        shutil.copy2(self.home + "/Inputs/" + self.spectrum_file,self.spectrum_file)
+        shutil.copy2(self.home + "/Inputs/" + self.lc_file,self.lc_file)
+
         #run Cosima:
         if seed != "none":
             print("running with a seed...")
@@ -164,6 +168,9 @@ class Run_MEGAlib:
         lc_output = save_dir + "/source_LC.root"
         bg_output = save_dir + "/background_counts_spectrum.root"
 
+        #get bg file:
+        this_bg_file = self.home + "/Inputs/" + self.bg_tra_file
+
         #run mimrec for both source and background:
         if config_file != "none":
             
@@ -177,7 +184,7 @@ class Run_MEGAlib:
              
             #background spectrum:
             os.system("mimrec -g %s -c %s -f %s -s -n -o %s \
-                    | tee %s/background_mimrec_terminal_output.txt" %(self.geo_file, config_file, self.bg_tra_file, bg_output, save_dir))
+                    | tee %s/background_mimrec_terminal_output.txt" %(self.geo_file, config_file, this_bg_file, bg_output, save_dir))
             
             #source ligh curve:
             os.system("mimrec -g %s -c %s -f %s -l -o %s -n \
@@ -200,7 +207,7 @@ class Run_MEGAlib:
                     -C HistogramBins.Spectrum=%s \
                     -C EventSelections.Source.UsePointSource=true \
                     -C EventSelections.Source.ARM.Max=%s \
-                     | tee %s/background_mimrec_terminal_output.txt" %(self.geo_file, self.bg_tra_file, bg_output, str(numbins+1), str(rad), save_dir))
+                     | tee %s/background_mimrec_terminal_output.txt" %(self.geo_file, this_bg_file, bg_output, str(numbins+1), str(rad), save_dir))
 
             #source light curve:
             os.system("mimrec -g %s -f %s -l -o %s -n \
@@ -291,6 +298,10 @@ class Run_MEGAlib:
         arm_list = [10] #initial value is used for determining energy-dependent list
         src_list = []
         bg_list = []
+        
+        #get bg file:
+        this_bg_file = self.home + "/Inputs/" + self.bg_tra_file
+
         for i in range(0,numbins+1):
             
             print("Working on energy bin %s..." %i)
@@ -307,7 +318,7 @@ class Run_MEGAlib:
             os.system("mimrec -g %s -f %s -s -o %s -n \
                     -C HistogramBins.Spectrum=%s \
                     -C EventSelections.Source.UsePointSource=true \
-                    -C EventSelections.Source.ARM.Max=%s" %(self.geo_file, self.bg_tra_file, bg_output, str(numbins+1), str(this_cut)))
+                    -C EventSelections.Source.ARM.Max=%s" %(self.geo_file, this_bg_file, bg_output, str(numbins+1), str(this_cut)))
 
             #change to save directory:
             os.chdir(save_dir)

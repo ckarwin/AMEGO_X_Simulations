@@ -42,7 +42,7 @@ class Process_MEGAlib:
         
         self.time = inputs["observation_time"]
         self.area =  inputs["area"]
-        self.input_model = inputs["spectrum_file"]
+        self.input_model = "Inputs/" + inputs["spectrum_file"]
         self.mission = inputs["mission"]
         self.plots = inputs["plots"]
 
