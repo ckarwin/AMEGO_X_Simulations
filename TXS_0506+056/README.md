@@ -22,7 +22,7 @@ Note: the background tra file is very large and therefore not contained in this 
 Below is a schematic showing an overview of the general process:
 
 <p align="center">
-<img width="900"  src="Images/MEGAlib_sim_overview.png">
+<img width="900"  src="Images/SED.png">
 </p>
 
 ## Quickstart Guide <br /> 
