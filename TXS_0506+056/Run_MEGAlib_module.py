@@ -89,8 +89,10 @@ class Run_MEGAlib:
         
          input definitions:
         
-         config_file: Optional input. Configuration file specifying selections for event reconstruction.
-        
+         config_file: Optional input. 
+            - Configuration file specifying selections for event reconstruction.
+            - Needs to be in "Inputs" directory
+
         """
 
         #make print statement:
@@ -112,6 +114,11 @@ class Run_MEGAlib:
 
         #run revan:
         if config_file != "none":
+
+            #copy configuration file to revan directory:
+            this_config = self.home + "/Inputs/" + config_file
+            shutil.copy2(this_config,config_file)
+            
             print("running with a configuration file...")
             os.system("revan -g %s -c %s -f %s -n -a | tee revan_terminal_output.txt" %(self.geo_file, config_file, sim_file))
 
