@@ -27,6 +27,11 @@ Below is a schematic showing an overview of the general process:
 
 ## Quickstart Guide <br /> 
 <pre>
+<b> 0. For fastest start (which will take care of step 1 below), directly clone as follows:
+  - git clone --depth 1 --filter=blob:none --no-checkout https://github.com/ckarwin/AMEGO_X_Simulations.git
+  - cd AMEGO_X_Simulations
+  - git checkout master --TXS_0506+056
+  
 <b> 1. Make the main working directory </b> 
   - Needs to contain the following
     -- client_code.py
