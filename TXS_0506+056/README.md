@@ -37,7 +37,7 @@ Below is a schematic showing an overview of the general process:
     -- submit_jobs.py (for submitting to batch system)
     -- inputs.yaml
     -- AMEGO_Performance directory (needed for mission="AMEGO")
-    -- AMEGO_X_Performance directory (needed for mission="AMEGO-X")
+    -- AMEGO-X_Performance directory (needed for mission="AMEGO-X")
 
 <b> 2. Specify inputs in inputs.yaml </b>
   - The input files need to be in a subdirectory of the main working directory called "Inputs".
