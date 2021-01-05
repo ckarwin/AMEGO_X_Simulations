@@ -181,7 +181,7 @@ class Run_MEGAlib:
         #run mimrec for both source and background:
         if config_file != "none":
             
-            config_file = self.home + "/" + config_file
+            config_file = self.home + "/Inputs/" + config_file
             
             print("running with a configuration file...")
             
@@ -300,7 +300,7 @@ class Run_MEGAlib:
         pair_df = pd.read_csv(pair,delim_whitespace=True)
         pair_energy = pair_df["Energy[MeV]"]*1000 #convert to keV
         pair_res = pair_df["Resolution[deg]"]
-        pair_func = interp1d(pair_energy,pair_res,kind="linear",bounds_error=False,fill_value="extrapolate")
+        pair_func = interp1d(pair_energy,pair_res,kind="linear",bounds_error=False,fill_value=2.5)
 
         arm_list = [10] #initial value is used for determining energy-dependent list
         src_list = []

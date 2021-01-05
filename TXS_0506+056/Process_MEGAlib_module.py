@@ -190,13 +190,16 @@ class Process_MEGAlib:
         plt.loglog(energy_data,A_eff, color="black",marker="",ls="-",lw=3,label="Effective Area (TXS 0506+056 all events)")
 
         #Plot True (Carolyn's) results for comparison:
-        untracked_compton_silicon = {"file":"%s_effective_area_untracked_compton_silicon.txt" %self.mission,"label":"Untracked Compton in silicon","color":"navy","ls":"--"}
+        if self.mission == "AMEGO":
+            untracked_compton_silicon = {"file":"%s_effective_area_untracked_compton_silicon.txt" %self.mission,"label":"Untracked Compton in silicon","color":"navy","ls":"--"}
         untracked_compton = {"file":"%s_effective_area_untracked_compton.txt" %self.mission,"label":"Untracked Compton","color":"cornflowerblue","ls":"--"}
         tracked_compton = {"file":"%s_effective_area_tracked_compton.txt" %self.mission,"label":"Tracked Compton","color":"green","ls":"-."}
         pair = {"file":"%s_effective_area_pair.txt" %self.mission,"label":"Pair Production","color":"red","ls":":"}
 
-        plot_list = [untracked_compton,untracked_compton_silicon,tracked_compton,pair]
-
+        plot_list = [untracked_compton,tracked_compton,pair]
+        if self.mission == "AMEGO":
+            plot_list += [untracked_compton_silicon]
+    
         for each in plot_list:
 
             this_file = "%s_Performance/" %self.mission + each["file"] 
@@ -331,12 +334,6 @@ class Process_MEGAlib:
         print("Total simulated counts:")
         print(total_counts)
         print()
-        print("Counts list:")
-        print(amego_counts.tolist())
-        print()
-        print("Counts Error list (standard):")
-        print(amego_error.tolist())
-        print()
 
         #calculate 1 sigma statistical error and significance:
         amego_error = np.sqrt(amego_counts + bg_counts)
@@ -396,10 +393,6 @@ class Process_MEGAlib:
         f.write("Summary of SED calculation:")
         f.write("\n\nTotal simulated counts:\n")
         f.write(str(total_counts))
-        f.write("\n\nCounts list:\n")
-        f.write(str(amego_counts.tolist()))
-        f.write("\n\nCounts Error list (standard):\n")
-        f.write(str(amego_error.tolist()))
         f.write("\n\nsignificance (sigma) of SED bins:\n")
         f.write(str(sigma.tolist()))
         f.write("\n\nsource counts:\n")
