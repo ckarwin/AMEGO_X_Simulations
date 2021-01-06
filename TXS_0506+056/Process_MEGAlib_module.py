@@ -27,6 +27,7 @@ import numpy as np
 import math
 from astropy.stats import poisson_conf_interval as pci
 import yaml
+import os
 ##########################################################
 
 #superclass:
@@ -145,7 +146,7 @@ class Process_MEGAlib:
         flux_model_interp = interp1d(energy_model, flux_model, kind='linear')
         
         #observed (simulated) data:
-        observed_data = wdir + "extracted_spectrum.dat"
+        observed_data = os.path.join(wdir,"extracted_spectrum.dat")
         df_data = pd.read_csv(observed_data, delim_whitespace=True)
         flux_data = df_data["src_ct/keV"] #ph/keV
         bg_data = df_data["bg_ct/keV"] * (self.time/(7200)) #2 hrs were simulated. Need to scale by the observation time.
@@ -174,12 +175,12 @@ class Process_MEGAlib:
         #save total effective area and background for LC:
         d = {"Aeff_total[cm^2]":[A_eff_full], "BG_total[ph]":[np.sum(bg_data*bin_width)]}
         df = pd.DataFrame(data = d,columns=["Aeff_total[cm^2]","BG_total[ph]"])
-        df.to_csv(wdir+"total_Aeff_and_BG_for_LC.dat",sep="\t",index=False)
+        df.to_csv(os.path.join(wdir,"total_Aeff_and_BG_for_LC.dat"),sep="\t",index=False)
     
         #save energy-dependent effective_area:
         d = {"energy [keV]":energy_data,"A_eff [cm^2]":A_eff}
         df = pd.DataFrame(data = d,columns=["energy [keV]","A_eff [cm^2]"])
-        df.to_csv(wdir+"Aeff.dat",sep="\t",index=False)
+        df.to_csv(os.path.join(wdir,"Aeff.dat"),sep="\t",index=False)
 
         #plot figure:
         fig = plt.figure(figsize=(9,6))
@@ -226,7 +227,7 @@ class Process_MEGAlib:
         plt.ylim(1,1e5)
         #plt.xlim(10,1e8)
         plt.grid(color="grey",alpha=0.4,ls=":")
-        plt.savefig(wdir+"Aeff.pdf")
+        plt.savefig(os.path.join(wdir,"Aeff.pdf"))
 
         if self.plots == True:
             plt.show()
@@ -294,7 +295,7 @@ class Process_MEGAlib:
         #plot simulated data:
 
         #load simulated data:
-        observed_data = wdir + "extracted_spectrum.dat"
+        observed_data = os.path.join(wdir,"extracted_spectrum.dat")
         amego_df = pd.read_csv(observed_data,delim_whitespace=True)
         amego_dNdE = amego_df["src_ct/keV"]
         bin_width = amego_df["BW[keV]"]
@@ -316,7 +317,7 @@ class Process_MEGAlib:
         print() 
 
         #load effective area:
-        area_df = pd.read_csv(wdir+"Aeff.dat",skiprows=[0],delim_whitespace=True,names=["energy","area"])
+        area_df = pd.read_csv(os.path.join(wdir,"Aeff.dat"),skiprows=[0],delim_whitespace=True,names=["energy","area"])
         area_energy = area_df["energy"]
         area = area_df["area"]
     
@@ -378,18 +379,18 @@ class Process_MEGAlib:
         ax.tick_params(axis='both',which='major',length=8)
         ax.tick_params(axis='both',which='minor',length=5)
 
-        plt.legend(loc=2,ncol=1,fontsize=11,frameon=False)
+        plt.legend(loc=1,ncol=1,fontsize=11,frameon=False)
         plt.ylim(1e-13,1e-9)
         plt.xlim(1e1,1e7)
         plt.grid(color="grey",alpha=0.2,ls="-")
-        plt.savefig(wdir+"SED.pdf")
+        plt.savefig(os.path.join(wdir,"SED.pdf"))
         
         if self.plots == True:
             plt.show()
             plt.close()
 
         #write output to file:
-        f = open(wdir+"SED_summary.txt","w")
+        f = open(os.path.join(wdir,"SED_summary.txt"),"w")
         f.write("Summary of SED calculation:")
         f.write("\n\nTotal simulated counts:\n")
         f.write(str(total_counts))
@@ -427,7 +428,7 @@ class Process_MEGAlib:
 
 
         #load light curve data:
-        lc_file = wdir + "extracted_lc.dat"
+        lc_file = os.path.join(wdir,"extracted_lc.dat")
         df = pd.read_csv(lc_file,delim_whitespace=True)
         t_center = df["t_center[s]"] #center of time bin in seconds
         t_low = df["t_low[s]"] #low of time bin in seconds

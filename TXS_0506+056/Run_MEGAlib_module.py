@@ -270,7 +270,11 @@ class Run_MEGAlib:
         if os.path.isdir(save_dir) == True:
             shutil.rmtree(save_dir)
         os.system("mkdir %s" %save_dir)
-    
+   
+        #define path to configuration file:
+        if config_file != "none":
+            config_file = self.home + "/Inputs/" + config_file
+
         #copy output tra file from revan to mimrec directory:
         rev_path = self.home + "/Revan/"
         tra_file = self.name + ".inc1.id1.tra"
@@ -314,18 +318,35 @@ class Run_MEGAlib:
             print("Working on energy bin %s..." %i)
 
             this_cut = arm_list[i]
-
-            #source spectrum:
-            os.system("mimrec -g %s -f %s -s -o %s -n \
+            
+            if config_file == "none":
+            
+                #source spectrum:
+                os.system("mimrec -g %s -f %s -s -o %s -n \
                     -C HistogramBins.Spectrum=%s \
                     -C EventSelections.Source.UsePointSource=true \
                     -C EventSelections.Source.ARM.Max=%s" %(self.geo_file, tra_file, src_output, str(numbins+1), str(this_cut)))
             
-            #background spectrum:
-            os.system("mimrec -g %s -f %s -s -o %s -n \
+                #background spectrum:
+                os.system("mimrec -g %s -f %s -s -o %s -n \
                     -C HistogramBins.Spectrum=%s \
                     -C EventSelections.Source.UsePointSource=true \
                     -C EventSelections.Source.ARM.Max=%s" %(self.geo_file, this_bg_file, bg_output, str(numbins+1), str(this_cut)))
+
+            if config_file != "none":
+
+                #source spectrum:
+                os.system("mimrec -g %s -c %s -f %s -s -o %s -n \
+                    -C HistogramBins.Spectrum=%s \
+                    -C EventSelections.Source.UsePointSource=true \
+                    -C EventSelections.Source.ARM.Max=%s" %(self.geo_file, config_file, tra_file, src_output, str(numbins+1), str(this_cut)))
+            
+                #background spectrum:
+                os.system("mimrec -g %s -c %s -f %s -s -o %s -n \
+                    -C HistogramBins.Spectrum=%s \
+                    -C EventSelections.Source.UsePointSource=true \
+                    -C EventSelections.Source.ARM.Max=%s" %(self.geo_file, config_file, this_bg_file, bg_output, str(numbins+1), str(this_cut)))
+                
 
             #change to save directory:
             os.chdir(save_dir)
