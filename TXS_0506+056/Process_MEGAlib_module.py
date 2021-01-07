@@ -443,7 +443,7 @@ class Process_MEGAlib:
         new = int(tot_bins/numbins)
     
         #upload total effective area and background counts:
-        this_file = wdir + "/total_Aeff_and_BG_for_LC.dat"
+        this_file = os.path.join(wdir,"total_Aeff_and_BG_for_LC.dat")
         df = pd.read_csv(this_file, delim_whitespace=True)
         Aeff_total = df["Aeff_total[cm^2]"][0]
         BG_total = df["BG_total[ph]"][0]
@@ -489,7 +489,7 @@ class Process_MEGAlib:
         binrange = np.arange(0,len(sig_list))
         d = {"bin": binrange, "sigma":sig_list, "flux[ph/cm^2/s]": ph_flux, "error[ph/cm^2/s]": ph_flux_error }
         df = pd.DataFrame(data = d,columns=["bin", "sigma","flux[ph/cm^2/s]","error[ph/cm^2/s]"])
-        df.to_csv(wdir+"Rebinned_LC_summary.dat",sep="\t",index=False)
+        df.to_csv(os.path.join(wdir,"Rebinned_LC_summary.dat"),sep="\t",index=False)
         print()
         print("rebinning summary:")
         print(df)
@@ -511,7 +511,7 @@ class Process_MEGAlib:
         tmax = max(new_time_list)
         plt.xlim(tmin,tmax)
         #plt.ylim(0.015,0.0445)
-        plt.savefig("%s/LC.pdf" %wdir)
+        plt.savefig(os.path.join("%s","LC.pdf") %wdir)
         
         if self.plots == True:
             plt.show()
