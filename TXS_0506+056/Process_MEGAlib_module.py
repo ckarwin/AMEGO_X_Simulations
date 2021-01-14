@@ -266,7 +266,10 @@ class Process_MEGAlib:
         energy_amego = df_amego["energy"]*(1e3) #convert MeV energy to keV
         
         #convert flux to erg, scale by observing time, and convert for pointed observation:
-        calc_time = 9.4608e7 #sensitivity is calculated for three years
+        if self.mission == "AMEGO-X":
+            calc_time = 9.4608e7 #AMEGO-X sensitivity is calculated for 3 years
+        if self.mission == "AMEGO":
+            calc_time = 1.5768e8 #AMEGO sensitivity is calculated for 5 years!
         mev_to_erg = 1.60218e-6
         scan_mode = 0.2 #exposure time is 20% in scanning mode
         flux_amego = df_amego["flux"] * mev_to_erg * math.sqrt((calc_time*scan_mode)/self.time)
