@@ -22,7 +22,7 @@ Note: the background tra file is very large and therefore not contained in this 
 Below is a schematic showing an overview of the general process:
 
 <p align="center">
-<img width="900"  src="Images/MEGAlib_sim_overview.png">
+<img width="900"  src="Images/MEGAlib_sim_overview_new.png">
 </p>
 
 ## Quickstart Guide <br /> 
@@ -69,7 +69,7 @@ Below are the original MEGAlib executables for running directly from terminal (m
 The simulated SED and light curve are shown below in red. For the SED, upper limits are plotted for bins with signficance < 3-sigma. Note the general agreement with the canonical instrumental sensitivity (which has been scaled to the proper exposure time).
 
 <p align="center">
-<img width="700"  src="Images/SED.png">
+<img width="700"  src="Images/SED_new.png">
 </p>
 
 <p align="center">
